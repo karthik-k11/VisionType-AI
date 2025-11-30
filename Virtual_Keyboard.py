@@ -33,3 +33,20 @@ class KeyButton:
 
 def get_dist(p1, p2):
     return math.hypot(p2[0] - p1[0], p2[1] - p1[1])
+
+def draw_keyboard(frame, keys, shift_active):
+    overlay = frame.copy()
+    cv2.rectangle(overlay, (20, 20), (1260, 460), THEME['bg'], cv2.FILLED)
+    frame = cv2.addWeighted(overlay, 0.4, frame, 0.6, 0)
+
+    for k in keys:
+        # Determine Key Color
+        if k.text == "SHIFT" and shift_active:
+            color = THEME['shift_active']
+        elif k.text == "SAVE":
+            color = THEME['save_btn']
+        else:
+            color = THEME['key']
+        
+        cv2.rectangle(frame, (k.x, k.y), (k.x + k.w, k.y + k.h), color, cv2.FILLED)
+        cv2.rectangle(frame, (k.x, k.y), (k.x + k.w, k.y + k.h), THEME['border'], 2)
