@@ -20,3 +20,16 @@ THEME = {
     'text': (255, 255, 255), 
     'border': (200, 200, 200)
 }
+
+class KeyButton:
+    def __init__(self, text, pos, size):
+        self.text = text
+        self.x, self.y = pos
+        self.w, self.h = size
+        self.last_click = 0
+
+    def is_hovering(self, fx, fy):
+        return self.x < fx < self.x + self.w and self.y < fy < self.y + self.h
+
+def get_dist(p1, p2):
+    return math.hypot(p2[0] - p1[0], p2[1] - p1[1])
