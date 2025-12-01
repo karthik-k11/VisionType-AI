@@ -98,3 +98,7 @@ for i, row in enumerate(keys_layout):
         elif char == "SAVE": w, x = 140, 780
         
         virtual_keys.append(KeyButton(char, (x, y), (w, h)))
+        
+text_buf = ""
+shift_mode = False
+saved_feedback_timer = 0
