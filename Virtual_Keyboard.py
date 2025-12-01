@@ -98,7 +98,24 @@ for i, row in enumerate(keys_layout):
         elif char == "SAVE": w, x = 140, 780
         
         virtual_keys.append(KeyButton(char, (x, y), (w, h)))
-        
+
 text_buf = ""
 shift_mode = False
 saved_feedback_timer = 0
+
+while True:
+    success, img = cap.read()
+    if not success: break
+    img = cv2.flip(img, 1)
+    hands, img = detector.findHands(img, flipType=False)
+    
+    img = draw_keyboard(img, virtual_keys, shift_mode)
+
+    if hands:
+        lm = hands[0]['lmList']
+        x1, y1 = lm[8][:2]  # Index Tip
+        
+        # Thumb configuration
+        x2, y2 = lm[4][:2]  # Thumb Tip
+        
+        dist = get_dist((x1, y1), (x2, y2))
