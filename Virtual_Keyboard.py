@@ -75,3 +75,10 @@ cap.set(3, CAM_WIDTH)
 cap.set(4, CAM_HEIGHT)
 detector = HandDetector(detectionCon=0.8, maxHands=1)
 kb = Controller()
+
+keys_layout = [
+    ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
+    ["A", "S", "D", "F", "G", "H", "J", "K", "L", ";"],
+    ["Z", "X", "C", "V", "B", "N", "M", ",", ".", "/"],
+    ["SHIFT", "SPACE", "BKSP", "CLR", "SAVE"] # Condensed names to fit
+]
