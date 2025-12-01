@@ -82,3 +82,19 @@ keys_layout = [
     ["Z", "X", "C", "V", "B", "N", "M", ",", ".", "/"],
     ["SHIFT", "SPACE", "BKSP", "CLR", "SAVE"] # Condensed names to fit
 ]
+
+virtual_keys = []
+# Generate Layout
+for i, row in enumerate(keys_layout):
+    for j, char in enumerate(row):
+        w, h = 85, 85
+        x, y = 50 + j * 105, 50 + i * 105
+        
+        # Manual positioning for the bottom row to fit 5 buttons
+        if char == "SHIFT": w, x = 140, 50
+        elif char == "SPACE": w, x = 230, 210
+        elif char == "BKSP": w, x = 140, 460
+        elif char == "CLR": w, x = 140, 620
+        elif char == "SAVE": w, x = 140, 780
+        
+        virtual_keys.append(KeyButton(char, (x, y), (w, h)))
