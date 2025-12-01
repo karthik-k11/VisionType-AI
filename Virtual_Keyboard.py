@@ -68,3 +68,10 @@ def save_to_file(text_content):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     with open("my_notes.txt", "a") as f:
         f.write(f"[{timestamp}] {text_content}\n")
+
+# --- SETUP ---
+cap = cv2.VideoCapture(0)
+cap.set(3, CAM_WIDTH)
+cap.set(4, CAM_HEIGHT)
+detector = HandDetector(detectionCon=0.8, maxHands=1)
+kb = Controller()
