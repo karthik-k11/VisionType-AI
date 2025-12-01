@@ -63,3 +63,8 @@ def draw_keyboard(frame, keys, shift_active):
         cv2.putText(frame, display_text, (k.x + off_x, k.y + 60), 
                     cv2.FONT_HERSHEY_PLAIN, scale, THEME['text'], 3)
     return frame
+def save_to_file(text_content):
+    if not text_content: return
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    with open("my_notes.txt", "a") as f:
+        f.write(f"[{timestamp}] {text_content}\n")
