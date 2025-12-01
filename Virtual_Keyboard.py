@@ -50,3 +50,16 @@ def draw_keyboard(frame, keys, shift_active):
         
         cv2.rectangle(frame, (k.x, k.y), (k.x + k.w, k.y + k.h), color, cv2.FILLED)
         cv2.rectangle(frame, (k.x, k.y), (k.x + k.w, k.y + k.h), THEME['border'], 2)
+
+        
+        # Text Logic 
+        display_text = k.text
+        if len(display_text) == 1: 
+            display_text = display_text.upper() if shift_active else display_text.lower()
+
+        scale = 1.5 if len(display_text) > 1 else 3.5
+        off_x = 10 if len(display_text) > 1 else 22 # Slight adjustment for longer words
+        
+        cv2.putText(frame, display_text, (k.x + off_x, k.y + 60), 
+                    cv2.FONT_HERSHEY_PLAIN, scale, THEME['text'], 3)
+    return frame
