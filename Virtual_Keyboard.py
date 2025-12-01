@@ -119,3 +119,15 @@ while True:
         x2, y2 = lm[4][:2]  # Thumb Tip
         
         dist = get_dist((x1, y1), (x2, y2))
+
+        for k in virtual_keys:
+            if k.is_hovering(x1, y1):
+                cv2.rectangle(img, (k.x, k.y), (k.x + k.w, k.y + k.h), THEME['hover'], cv2.FILLED)
+                cv2.rectangle(img, (k.x, k.y), (k.x + k.w, k.y + k.h), THEME['border'], 2)
+                
+                # Re-draw text
+                lbl = k.text
+                if len(lbl) == 1: lbl = lbl.upper() if shift_mode else lbl.lower()
+                scale = 1.5 if len(lbl) > 1 else 3.5
+                cv2.putText(img, lbl, (k.x + 10, k.y + 60), cv2.FONT_HERSHEY_PLAIN, scale, THEME['text'], 3)
+
