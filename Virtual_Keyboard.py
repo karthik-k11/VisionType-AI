@@ -131,3 +131,28 @@ while True:
                 scale = 1.5 if len(lbl) > 1 else 3.5
                 cv2.putText(img, lbl, (k.x + 10, k.y + 60), cv2.FONT_HERSHEY_PLAIN, scale, THEME['text'], 3)
 
+                # Click Check
+                if dist < CLICK_SENSITIVITY and (time.time() - k.last_click) > CLICK_COOLDOWN:
+                    k.last_click = time.time()
+                    cv2.rectangle(img, (k.x, k.y), (k.x + k.w, k.y + k.h), THEME['click'], cv2.FILLED)
+
+                    # --- LOGIC ---
+                    if k.text == "SHIFT":
+                        shift_mode = not shift_mode
+                    elif k.text == "SPACE":
+                        text_buf += " "
+                        kb.press(Key.space); kb.release(Key.space)
+                    elif k.text == "BKSP":
+                        text_buf = text_buf[:-1]
+                        kb.press(Key.backspace); kb.release(Key.backspace)
+                    elif k.text == "CLR":
+                        text_buf = ""
+                    elif k.text == "SAVE":
+                        save_to_file(text_buf)
+                        text_buf = "" # Clear after save
+                        saved_feedback_timer = time.time() # Start feedback timer
+                    else:
+                        char = k.text.upper() if shift_mode else k.text.lower()
+                        text_buf += char
+                        kb.press(char); kb.release(char)
+
