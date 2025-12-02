@@ -166,3 +166,9 @@ while True:
     else:
         cv2.putText(img, text_buf[-30:], (70, 620), cv2.FONT_HERSHEY_PLAIN, 4, THEME['text'], 4)
 
+    cv2.imshow("VisionType Pro", img)
+    if cv2.waitKey(1) & 0xFF == ord('q'): break
+
+cap.release()
+cv2.destroyAllWindows()
+
