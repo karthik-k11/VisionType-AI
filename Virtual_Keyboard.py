@@ -156,3 +156,7 @@ while True:
                         text_buf += char
                         kb.press(char); kb.release(char)
 
+    # --- TEXT BOX ---
+    cv2.rectangle(img, (50, 550), (1230, 650), THEME['bg'], cv2.FILLED)
+    cv2.rectangle(img, (50, 550), (1230, 650), THEME['border'], 2)            
+
