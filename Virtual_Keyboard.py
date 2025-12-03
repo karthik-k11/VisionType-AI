@@ -156,12 +156,12 @@ while True:
                         text_buf += char
                         kb.press(char); kb.release(char)
 
-    # --- TEXT BOX ---
+    #For text box
     cv2.rectangle(img, (50, 550), (1230, 650), THEME['bg'], cv2.FILLED)
     cv2.rectangle(img, (50, 550), (1230, 650), THEME['border'], 2)
 
-    # Show "SAVED!" message if we just saved
-    if time.time() - saved_feedback_timer < 2: # Show for 2 seconds
+    # Show "SAVED!" message If I saved
+    if time.time() - saved_feedback_timer < 2: #Show for 2 seconds
         cv2.putText(img, "SAVED TO FILE!", (400, 620), cv2.FONT_HERSHEY_PLAIN, 4, (0, 255, 0), 4)
     else:
         cv2.putText(img, text_buf[-30:], (70, 620), cv2.FONT_HERSHEY_PLAIN, 4, THEME['text'], 4)
@@ -171,4 +171,3 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
-
