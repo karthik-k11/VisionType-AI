@@ -69,7 +69,7 @@ def save_to_file(text_content):
     with open("my_notes.txt", "a") as f:
         f.write(f"[{timestamp}] {text_content}\n")
 
-# --- SETUP ---
+#Setup
 cap = cv2.VideoCapture(0)
 cap.set(3, CAM_WIDTH)
 cap.set(4, CAM_HEIGHT)
@@ -136,7 +136,7 @@ while True:
                     k.last_click = time.time()
                     cv2.rectangle(img, (k.x, k.y), (k.x + k.w, k.y + k.h), THEME['click'], cv2.FILLED)
 
-                    # --- LOGIC ---
+                    #Logic
                     if k.text == "SHIFT":
                         shift_mode = not shift_mode
                     elif k.text == "SPACE":
