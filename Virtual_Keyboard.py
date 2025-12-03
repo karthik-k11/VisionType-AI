@@ -5,7 +5,7 @@ import time
 import math
 from datetime import datetime
 
-# --- SETTINGS ---
+#Settings
 CAM_WIDTH, CAM_HEIGHT = 1280, 720
 CLICK_SENSITIVITY = 40  # Slightly lower for thumb pinch accuracy
 CLICK_COOLDOWN = 0.20 
