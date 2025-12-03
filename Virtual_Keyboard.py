@@ -16,7 +16,7 @@ THEME = {
     'hover': (70, 70, 70), 
     'click': (0, 255, 127), 
     'shift_active': (255, 100, 100),
-    'save_btn': (138, 43, 226),      # Purple color for Save button
+    'save_btn': (138, 43, 226),      # Purple clr for Save button
     'text': (255, 255, 255), 
     'border': (200, 200, 200)
 }
