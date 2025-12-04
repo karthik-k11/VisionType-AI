@@ -14,3 +14,12 @@ A contactless, virtual keyboard interface powered by Computer Vision. This proje
 * **Custom Geometry Logic:** Implements manual Euclidean distance calculations for click detection, removing reliance on heavy wrapper logic.
 * **Modern UI:** A sleek, semi-transparent Dark Mode interface designed for visibility.
 * **Performance:** Optimized for speed with a built-in FPS counter.
+
+## 🛠️ Tech Stack
+
+* **Language:** Python 3.10
+* **Core Libraries:**
+    * `opencv-python` (Image Processing)
+    * `mediapipe` (Hand Landmark Detection)
+    * `cvzone` (Helper module for Math/UI)
+    * `pynput` (Simulates physical keyboard presses)
