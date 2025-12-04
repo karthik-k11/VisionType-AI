@@ -23,3 +23,23 @@ A contactless, virtual keyboard interface powered by Computer Vision. This proje
     * `mediapipe` (Hand Landmark Detection)
     * `cvzone` (Helper module for Math/UI)
     * `pynput` (Simulates physical keyboard presses)
+
+## 📦 Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/YOUR-USERNAME/VisionType-AI.git](https://github.com/YOUR-USERNAME/VisionType-AI.git)
+    cd VisionType-AI
+    ```
+
+2.  **Set up a Virtual Environment (Recommended):**
+    ```bash
+    # For Windows
+    py -3.10 -m venv venv
+    .\venv\Scripts\activate
+    ```
+
+3.  **Install Dependencies:**
+    ```bash
+    pip install opencv-python cvzone mediapipe pynput
+    ```
