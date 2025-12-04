@@ -43,3 +43,15 @@ A contactless, virtual keyboard interface powered by Computer Vision. This proje
     ```bash
     pip install opencv-python cvzone mediapipe pynput
     ```
+## 🎮 How to Use
+
+1.  **Run the Application:**
+    ```bash
+    python main.py
+    ```
+
+2.  **Typing Gestures:**
+    * **Hover:** Move your hand to position the **Index Finger** over a key.
+    * **Click:** Pinch your **Thumb** and **Index Finger** together.
+    * **Shift:** Click the `SHIFT` key to toggle Caps Lock (Keys turn red).
+    * **Save:** Click the purple `SAVE` button to export your text to `my_notes.txt`.
