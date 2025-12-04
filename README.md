@@ -55,3 +55,12 @@ A contactless, virtual keyboard interface powered by Computer Vision. This proje
     * **Click:** Pinch your **Thumb** and **Index Finger** together.
     * **Shift:** Click the `SHIFT` key to toggle Caps Lock (Keys turn red).
     * **Save:** Click the purple `SAVE` button to export your text to `my_notes.txt`.
+## ⚙️ Configuration
+
+You can customize the keyboard's behavior by modifying the `SETTINGS` section at the top of `main.py`:
+
+```python
+# main.py
+CLICK_SENSITIVITY = 40  # Increase if clicks are hard to register
+CLICK_COOLDOWN = 0.20   # Decrease for faster typing speed
+THEME = {...}           # Change colors for keys, text, and background
