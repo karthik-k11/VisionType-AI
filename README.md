@@ -57,7 +57,7 @@ A contactless, virtual keyboard interface powered by Computer Vision. This proje
     * **Save:** Click the purple `SAVE` button to export your text to `my_notes.txt`.
 ## ⚙️ Configuration
 
-You can customize the keyboard's behavior by modifying the `SETTINGS` section at the top of `main.py`:
+Customize the keyboard's behavior by modifying the `SETTINGS` section at the top of `main.py`:
 
 ```python
 # main.py
